@@ -430,7 +430,7 @@ button{ font-family: inherit; cursor: pointer; }
 }
 .service-banner .banner-copy{ padding: 0 40px; color:#fff; }
 .service-banner .banner-copy p{ color:#c7c5be; margin:0; font-size:13.5px; }
-.service-banner svg{ position:absolute; right: 30px; width: 90px; opacity:.18; }
+.service-banner svg{ position:absolute; right: 30px; width: 90px; color:var(--accent) }
 
 .steps-list{ margin-top: 30px; }
 .step{ display:flex; gap:16px; padding: 18px 0; border-bottom: 1px solid var(--line); }
