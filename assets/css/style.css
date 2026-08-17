@@ -24,7 +24,6 @@
   --font-display:  sans-serif;
   --font-body:     sans-serif;
 
-
   --radius:        6px;
   --shadow-sm:     0 1px 2px rgba(20,18,10,0.06);
   --shadow-md:     0 10px 24px rgba(20,18,10,0.08);
@@ -430,7 +429,35 @@ button{ font-family: inherit; cursor: pointer; }
 }
 .service-banner .banner-copy{ padding: 0 40px; color:#fff; }
 .service-banner .banner-copy p{ color:#c7c5be; margin:0; font-size:13.5px; }
-.service-banner svg{ position:absolute; right: 30px; width: 90px; color:var(--accent) }
+.service-banner svg{ position:absolute; right: 30px; width: 90px; color: var(--accent); }
+
+/* Below ~700px the fixed 21:8 aspect ratio is too short for wrapped
+   heading text, which pushed it under the absolutely-positioned tag
+   and icon. Switch to a stacked, height-auto layout instead. */
+@media (max-width: 700px){
+  .service-banner{
+    aspect-ratio: auto;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 20px 18px;
+    min-height: 0;
+  }
+  .service-banner .tag{
+    position: static;
+    display: inline-block;
+    margin-bottom: 12px;
+  }
+  .service-banner .banner-copy{ padding: 0; width: 100%; }
+  .service-banner .banner-copy h1{
+    font-size: 19px !important;
+    max-width: none !important;
+    line-height: 1.3;
+    margin-bottom: 6px;
+  }
+  .service-banner .banner-copy p{ font-size: 12.5px; }
+  .service-banner svg{ display: none; }
+}
 
 .steps-list{ margin-top: 30px; }
 .step{ display:flex; gap:16px; padding: 18px 0; border-bottom: 1px solid var(--line); }
